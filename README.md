@@ -1,65 +1,6 @@
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-69209675-1', 'auto'); ga('send', 'pageview');</script>
 
-<div class="container sidebar-position-left page-post-detail ">
-
-<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-
-<div class="header-inner">
-
-<div class="site-brand-wrapper">
-
-<div class="site-meta ">
-
-<div class="custom-logo-site-title">[<span class="logo-line-before"></span><span class="site-title">Happy Hacking</span><span class="logo-line-after"></span>](/)</div>
-
-我的眼里只有代码
-
-</div>
-
-<div class="site-nav-toggle"><button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div>
-
-</div>
-
-<nav class="site-nav">
-
-*   [
-    首页](/)
-*   [
-    归档](/archives)
-*   [
-    分类](/categories)
-*   [
-    标签](/tags)
-*   [
-    关于](/about)
-*   [
-    留言](/guestbook)
-
-</nav>
-
-</div>
-
-</header>
-
-<main id="main" class="main">
-
-<div class="main-inner">
-
-<div class="content-wrap">
-
-<div id="content" class="content">
-
-<div id="posts" class="posts-expand">
-
-<article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://meilbn.com/2016/10/27/CFHipsterRef-Low-Level-Programming-on-iOS-OSX-Chapter2-Objective-C-Runtime/"> <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person"> <meta itemprop="name" content="我的眼里只有代码"> <meta itemprop="description" content=""> <meta itemprop="image" content="/images/default_avatar.jpg"> </span> <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta itemprop="name" content="Happy Hacking"></span> 
-
-<header class="post-header">
 
 # Objective-C Runtime
-
-<div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"></span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-27T17:09:06+08:00">2016-10-27</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"></span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">[<span itemprop="name">学习笔记</span>](/categories/学习笔记/) </span></span><span class="post-comments-count"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"></span>[<span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/27/CFHipsterRef-Low-Level-Programming-on-iOS-OSX-Chapter2-Objective-C-Runtime/" itemprop="commentCount"></span>](/2016/10/27/CFHipsterRef-Low-Level-Programming-on-iOS-OSX-Chapter2-Objective-C-Runtime/#comments)</span><span id="/2016/10/27/CFHipsterRef-Low-Level-Programming-on-iOS-OSX-Chapter2-Objective-C-Runtime/" class="leancloud_visitors" data-flag-title="Objective-C Runtime"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"></span><span class="post-meta-item-text">阅读次数</span><span class="leancloud-visitors-count"></span></span></div>
-
-</header>
 
 <div class="post-body" itemprop="articleBody">
 
@@ -81,19 +22,15 @@
 
 在 Objective-C 中，调用一个对象的某个方法，一般的写法是这样的：
 
-<figure class="highlight objectivec">
 
-| 
 
 <pre><span class="line">1</span>
 </pre>
-
- | 
+ 
 
 <pre><span class="line">[object message];</span>
 </pre>
 
- |
 
 </figure>
 
@@ -101,17 +38,14 @@
 
 <figure class="highlight objectivec">
 
-| 
 
 <pre><span class="line">1</span>
 </pre>
-
- | 
+ 
 
 <pre><span class="line">objc_msgSend(object, <span class="keyword">@selector</span>(message));</span>
 </pre>
 
- |
 
 </figure>
 
@@ -127,42 +61,6 @@
 属性定义了对象状态的公共接口。
 
 例如，访问一个对象的属性列表，我们可以通过属性元编程来避免手动实现 `NSCoding`：
-
-<figure class="highlight objectivec">
-
-| 
-
-<pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-</pre>
-
  | 
 
 <pre><span class="line"><span class="preprocessor">#pragma mark - NSCoding</span></span>
@@ -196,7 +94,6 @@
 <span class="line">}</span>
 </pre>
 
- |
 
 </figure>
 
@@ -209,27 +106,6 @@
 任何关联对象都是通过一个 key 来关联的，这个 key 可以是任何常量值。最简单的方法就是传入 getter 方法选择器（方法选择器在运行时保证是唯一且不变的）。
 
 <figure class="highlight objectivec">
-
-| 
-
-<pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-</pre>
-
- | 
 
 <pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSObject</span> (<span class="title">AssociatedObject</span>)</span></span>
 <span class="line"></span>
@@ -248,7 +124,7 @@
 <span class="line">}</span>
 </pre>
 
- |
+ 
 
 </figure>
 
@@ -264,18 +140,6 @@
 
 <figure class="highlight objectivec">
 
-| 
-
-<pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-</pre>
-
- | 
 
 <pre><span class="line">Class c = [<span class="built_in">NSObject</span> class];</span>
 <span class="line">IMP addingMethodIMP = imp_implementationWithBlock((<span class="built_in">NSString</span> *)^(<span class="keyword">id</span> <span class="keyword">self</span>, <span class="keyword">id</span> arg1) {</span>
@@ -286,7 +150,7 @@
 <span class="line">class_addMethod(c, <span class="keyword">@selector</span>(addingMethodWithArg:), addingMethodIMP, addingMethodTypes);</span>
 </pre>
 
- |
+ 
 
 </figure>
 
@@ -303,43 +167,6 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 
 <figure class="highlight objectivec">
 
-| 
-
-<pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-<span class="line">32</span>
-</pre>
-
- | 
 
 <pre><span class="line"><span class="preprocessor">#import <span class="title"><objc/runtime.h></span></span></span>
 <span class="line"></span>
@@ -375,7 +202,7 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 <span class="line"><span class="keyword">@end</span></span>
 </pre>
 
- |
+ 
 
 </figure>
 
@@ -393,30 +220,9 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 
 <figure class="highlight objectivec">
 
-| 
+ 
 
-<pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-</pre>
 
- | 
 
 <pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Product</span> : <span class="title">NSObject</span></span></span>
 <span class="line"></span>
@@ -439,56 +245,13 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 <span class="line">}</span>
 </pre>
 
- |
+ 
 
 </figure>
 
 运行时创建：
 
 <figure class="highlight objectivec">
-
-| 
-
-<pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-<span class="line">32</span>
-<span class="line">33</span>
-<span class="line">34</span>
-<span class="line">35</span>
-<span class="line">36</span>
-</pre>
-
- | 
-
 <pre><span class="line">Class c = objc_allocateClassPair([<span class="built_in">NSObject</span> class], <span class="string">"Product"</span>, <span class="number">0</span>);</span>
 <span class="line">class_addIvar(c, <span class="string">"name"</span>, <span class="keyword">sizeof</span>(<span class="keyword">id</span>), log2(<span class="keyword">sizeof</span>(<span class="keyword">id</span>)), @encode(<span class="keyword">id</span>));</span>
 <span class="line">class_addIvar(c, <span class="string">"price"</span>, <span class="keyword">sizeof</span>(<span class="keyword">double</span>), log2(<span class="keyword">sizeof</span>(<span class="keyword">double</span>)), @encode(<span class="keyword">double</span>));</span>
@@ -527,7 +290,7 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 <span class="line">objc_registerClassPair(c);</span>
 </pre>
 
- |
+ 
 
 </figure>
 
@@ -547,19 +310,19 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 
 <figure class="highlight objectivec">
 
-| 
+
 
 <pre><span class="line">1</span>
 <span class="line">2</span>
 </pre>
 
- | 
+ 
 
 <pre><span class="line">Product *widget = [[Product alloc] initWithName:<span class="string">@"Widget"</span> price:<span class="number">50.00</span>];</span>
 <span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@: %g"</span>, widget<span class="variable">.name</span>, widget,price);</span>
 </pre>
 
- |
+ 
 
 </figure>
 
