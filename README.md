@@ -24,8 +24,6 @@
 
 
 
-<pre><span class="line">1</span>
-</pre>
  
 
 <pre><span class="line">[object message];</span>
@@ -38,10 +36,6 @@
 
 <figure class="highlight objectivec">
 
-
-<pre><span class="line">1</span>
-</pre>
- 
 
 <pre><span class="line">objc_msgSend(object, <span class="keyword">@selector</span>(message));</span>
 </pre>
@@ -435,15 +429,4 @@ You are the code of my eye.
 
 <div class="footer-inner"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-<div class="copyright">© 2015 - <span itemprop="copyrightYear">2017</span> <span class="with-love"></span><span class="author" itemprop="copyrightHolder">我的眼里只有代码</span></div>
-
-<div class="theme-info"><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span>次，</span> <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv"></span>人次</span></div>
-
-</div>
-
-</footer>
-
-</div>
-
-<script type="text/javascript">if (Object.prototype.toString.call(window.Promise) !== '[object Function]') { window.Promise = null; }</script> <script type="text/javascript">var disqus_shortname = 'ihappyhacking'; var disqus_identifier = '2016/10/27/CFHipsterRef-Low-Level-Programming-on-iOS-OSX-Chapter2-Objective-C-Runtime/'; var disqus_title = "Objective-C Runtime"; function run_disqus_script(disqus_script) { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); } run_disqus_script('count.js'); var disqus_config = function () { this.page.url = disqus_url; this.page.identifier = disqus_identifier; this.page.title = disqus_title; }; run_disqus_script('embed.js');</script> <script>AV.initialize("dFo2NvCcL1s5zeJtuvzonGrj-gzGzoHsz", "3gyJUovHABTEqJVyX08exA3z");</script> <script>function showTime(Counter) { var query = new AV.Query(Counter); var entries = []; var $visitors = $(".leancloud_visitors"); $visitors.each(function () { entries.push( $(this).attr("id").trim() ); }); query.containedIn('url', entries); query.find() .done(function (results) { var COUNT_CONTAINER_REF = '.leancloud-visitors-count'; if (results.length === 0) { $visitors.find(COUNT_CONTAINER_REF).text(0); return; } for (var i = 0; i < results.length; i++) { var item = results[i]; var url = item.get('url'); var time = item.get('time'); var element = document.getElementById(url); $(element).find(COUNT_CONTAINER_REF).text(time); } for(var i = 0; i < entries.length; i++) { var url = entries[i]; var element = document.getElementById(url); var countSpan = $(element).find(COUNT_CONTAINER_REF); if( countSpan.text() == '') { countSpan.text(0); } } }) .fail(function (object, error) { console.log("Error: " + error.code + " " + error.message); }); } function addCount(Counter) { var $visitors = $(".leancloud_visitors"); var url = $visitors.attr('id').trim(); var title = $visitors.attr('data-flag-title').trim(); var query = new AV.Query(Counter); query.equalTo("url", url); query.find({ success: function(results) { if (results.length > 0) { var counter = results[0]; counter.fetchWhenSave(true); counter.increment("time"); counter.save(null, { success: function(counter) { var $element = $(document.getElementById(url)); $element.find('.leancloud-visitors-count').text(counter.get('time')); }, error: function(counter, error) { console.log('Failed to save Visitor num, with error message: ' + error.message); } }); } else { var newcounter = new Counter(); /* Set ACL */ var acl = new AV.ACL(); acl.setPublicReadAccess(true); acl.setPublicWriteAccess(true); newcounter.setACL(acl); /* End Set ACL */ newcounter.set("title", title); newcounter.set("url", url); newcounter.set("time", 1); newcounter.save(null, { success: function(newcounter) { var $element = $(document.getElementById(url)); $element.find('.leancloud-visitors-count').text(newcounter.get('time')); }, error: function(newcounter, error) { console.log('Failed to create'); } }); } }, error: function(error) { console.log('Error:' + error.code + " " + error.message); } }); } $(function() { var Counter = AV.Object.extend("Counter"); if ($('.leancloud_visitors').length == 1) { addCount(Counter); } else if ($('.post-title-link').length > 1) { showTime(Counter); } });</script>
 
