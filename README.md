@@ -304,12 +304,6 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 
 <figure class="highlight objectivec">
 
-
-
-<pre><span class="line">1</span>
-<span class="line">2</span>
-</pre>
-
  
 
 <pre><span class="line">Product *widget = [[Product alloc] initWithName:<span class="string">@"Widget"</span> price:<span class="number">50.00</span>];</span>
@@ -323,110 +317,5 @@ Method Swizzling 是改变一个已存在的方法的实现的过程。这个技
 </div>
 
 <footer class="post-footer">
-
-<div class="post-tags">[# Objective-C](/tags/Objective-C/) [# Runtime](/tags/Runtime/)</div>
-
-<div class="post-nav">
-
-<div class="post-nav-next post-nav-item">[使用过的第三方服务](/2016/10/05/used-third-party-services/ "使用过的第三方服务")</div>
-
-<span class="post-nav-divider"></span>
-
-<div class="post-nav-prev post-nav-item">[Grand Central Dispatch](/2016/10/29/CFHipsterRef-Low-Level-Programming-on-iOS-OSX-Chapter5-Grand-Central-Dispatch/ "Grand Central Dispatch")</div>
-
-</div>
-
-</footer>
-
-</article>
-
-</div>
-
-</div>
-
-<div class="comments" id="comments">
-
-<div id="disqus_thread">
-
-<noscript>Please enable JavaScript to view the [comments powered by Disqus.](//disqus.com/?ref_noscript)</noscript>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="sidebar-toggle">
-
-<div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div>
-
-</div>
-
-<aside id="sidebar" class="sidebar">
-
-<div class="sidebar-inner">
-
-*   文章目录
-*   站点概览
-
-<section class="site-overview sidebar-panel">
-
-<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">![我的眼里只有代码](/images/default_avatar.jpg)
-
-我的眼里只有代码
-
-You are the code of my eye.
-'Cause you are the apple of my eye.
-
-</div>
-
-<nav class="site-state motion-element">
-
-<div class="site-state-item site-state-posts">[<span class="site-state-item-count">33</span> <span class="site-state-item-name">日志</span>](/archives)</div>
-
-<div class="site-state-item site-state-categories">[<span class="site-state-item-count">8</span> <span class="site-state-item-name">分类</span>](/categories/index.html)</div>
-
-<div class="site-state-item site-state-tags">[<span class="site-state-item-count">52</span> <span class="site-state-item-name">标签</span>](/tags/index.html)</div>
-
-</nav>
-
-<div class="links-of-author motion-element"><span class="links-of-author-item">[GitHub](https://github.com/meilbn "GitHub") </span><span class="links-of-author-item">[Weibo](http://weibo.com/fuckingcode "Weibo") </span><span class="links-of-author-item">[Twitter](https://twitter.com/meilbn "Twitter") </span><span class="links-of-author-item">[Facebook](https://www.facebook.com/meilbn "Facebook") </span><span class="links-of-author-item">[Instagram](https://instagram.com/meilbn/ "Instagram") </span><span class="links-of-author-item">[GooglePlus](https://plus.google.com/u/0/106344002269408415978/posts "GooglePlus") </span><span class="links-of-author-item">[ZhiHu](http://www.zhihu.com/people/meilbn/ "ZhiHu") </span><span class="links-of-author-item">[DouBan](http://www.douban.com/people/codemaker/ "DouBan")</span></div>
-
-<div class="cc-license motion-element" itemprop="license">[![Creative Commons](/images/cc-by-nc-sa.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) </div>
-
-</section>
-
-<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-
-<div class="post-toc">
-
-<div class="post-toc-content">
-
-1.  [<span class="nav-number">1.</span> <span class="nav-text">0x00 前言</span>](#0x00_前言)
-2.  [<span class="nav-number">2.</span> <span class="nav-text">0x01 libobjc</span>](#0x01_libobjc)
-3.  [<span class="nav-number">3.</span> <span class="nav-text">0x02 发送消息（Message Sending）</span>](#0x02_发送消息（Message_Sending）)
-4.  [<span class="nav-number">4.</span> <span class="nav-text">0x03 属性元编程（Metaprogramming with Properties）</span>](#0x03_属性元编程（Metaprogramming_with_Properties）)
-5.  [<span class="nav-number">5.</span> <span class="nav-text">0x04 关联对象（Associated Objects）</span>](#0x04_关联对象（Associated_Objects）)
-6.  [<span class="nav-number">6.</span> <span class="nav-text">0x05 动态添加方法（Dynamically Adding a Method）</span>](#0x05_动态添加方法（Dynamically_Adding_a_Method）)
-7.  [<span class="nav-number">7.</span> <span class="nav-text">0x06 Method Swizzling</span>](#0x06_Method_Swizzling)
-8.  [<span class="nav-number">8.</span> <span class="nav-text">0x07 动态创建一个类（Dynamically Creating a Class）</span>](#0x07_动态创建一个类（Dynamically_Creating_a_Class）)
-
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-</aside>
-
-</div>
-
-</main>
-
-<footer id="footer" class="footer">
-
-<div class="footer-inner"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
